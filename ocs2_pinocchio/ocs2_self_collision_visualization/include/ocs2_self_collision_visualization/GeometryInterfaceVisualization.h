@@ -38,10 +38,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace ocs2 {
 
-class GeometryInterfaceVisualization : public rclcpp::Node {
+class GeometryInterfaceVisualization{
  public:
   GeometryInterfaceVisualization(PinocchioInterface pinocchioInterface,
                                  PinocchioGeometryInterface geometryInterface,
+                                 rclcpp::Node::SharedPtr& node,
                                  std::string pinocchioWorldFrame = "world");
   virtual ~GeometryInterfaceVisualization() = default;
 

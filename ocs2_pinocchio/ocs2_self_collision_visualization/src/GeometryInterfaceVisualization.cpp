@@ -43,12 +43,12 @@ namespace ocs2 {
 GeometryInterfaceVisualization::GeometryInterfaceVisualization(
     PinocchioInterface pinocchioInterface,
     PinocchioGeometryInterface geometryInterface,
+    rclcpp::Node::SharedPtr& node,
     std::string pinocchioWorldFrame)
-    : Node("GeometryInterfaceVisualization"),
-      pinocchioInterface_(std::move(pinocchioInterface)),
+    : pinocchioInterface_(std::move(pinocchioInterface)),
       geometryInterface_(std::move(geometryInterface)),
       markerPublisher_(
-          this->create_publisher<visualization_msgs::msg::MarkerArray>(
+          node->create_publisher<visualization_msgs::msg::MarkerArray>(
               "distance_markers", 1)),
       pinocchioWorldFrame_(std::move(pinocchioWorldFrame)) {}
 

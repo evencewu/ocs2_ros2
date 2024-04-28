@@ -130,7 +130,7 @@ int main(int argc, char** argv) {
       *pInterface, selfCollisionLinkPairs, selfCollisionObjectPairs));
 
   vInterface.reset(
-      new GeometryInterfaceVisualization(*pInterface, *gInterface, baseFrame));
+      new GeometryInterfaceVisualization(*pInterface, *gInterface,node ,baseFrame));
 
   auto sub = node->create_subscription<sensor_msgs::msg::JointState>(
       "joint_states", 1, &jointStateCallback);

@@ -112,7 +112,7 @@ void MobileManipulatorDummyVisualization::launchVisualizerNode() {
                                              collisionObjectPairs);
     // set geometry visualization markers
     geometryVisualization_.reset(new GeometryInterfaceVisualization(
-        std::move(pinocchioInterface), geomInterface));
+        std::move(pinocchioInterface), geomInterface,node_));
   }
 }
 
